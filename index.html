@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog ADA6</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f0f2f5;
+            color: #333;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .header {
+            background-color: #1a202c;
+            color: #fff;
+            padding: 20px 0;
+            border-bottom-left-radius: 15px;
+            border-bottom-right-radius: 15px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        .nav-link {
+            padding: 10px 15px;
+            border-radius: 8px;
+            transition: background-color 0.3s ease;
+            cursor: pointer;
+        }
+        .nav-link:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+        .hero-section {
+            background: linear-gradient(135deg, #4a00e0, #8e2de2); 
+            color: #fff;
+            padding: 80px 0;
+            text-align: center;
+            border-radius: 15px;
+            margin-top: 20px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+        }
+        .card {
+            background-color: #ffffff;
+            border-radius: 12px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            padding: 25px;
+            margin-bottom: 25px;
+            transition: transform 0.3s ease;
+        }
+        .card:hover {
+            transform: translateY(-5px);
+        }
+        .presentation-slide {
+            display: none;
+            text-align: center;
+            background-color: #ffffff;
+            border-radius: 12px;
+            padding: 30px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+        .presentation-slide.active {
+            display: block;
+        }
+        .slide-button {
+            background-color: #4CAF50; 
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        .slide-button:hover {
+            background-color: #45a049;
+        }
+        .footer {
+            background-color: #1a202c;
+            color: #fff;
+            padding: 20px 0;
+            text-align: center;
+            border-top-left-radius: 15px;
+            border-top-right-radius: 15px;
+            margin-top: 30px;
+        }
+        .hidden-section {
+            display: none;
+        }
+        .active-section {
+            display: block;
+        }
+    </style>
+</head>
+<body class="bg-gray-100">
+    <div class="header">
+        <div class="container flex justify-between items-center">
+            <h1 class="text-3xl font-bold">Blog Equipo #4</h1>
+            <nav>
+                <ul class="flex space-x-6">
+                    <li><a href="#" class="nav-link" onclick="showSection('home')">Inicio</a></li>
+                    <li><a href="#" class="nav-link" onclick="showSection('presentation')">Presentación</a></li>
+                    <li><a href="#" class="nav-link" onclick="showSection('video')">Video</a></li>
+                    <li><a href="#" class="nav-link" onclick="showSection('content')">Contenido</a></li>
+                    <li><a href="#" class="nav-link" onclick="showSection('contact')">Contacto</a></li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+
+    <main class="container py-8">
+        <!-- Página de Inicio -->
+        <section id="home" class="active-section hero-section">
+            <h2 class="text-5xl font-extrabold mb-4">Blog Equipo #4
+                - Tipos de Redes
+            </h2>
+            <p class="text-xl leading-relaxed">
+                En este blog, encontrarás una introducción clara a los fundamentos de las redes, descripciones detalladas de LAN, WAN, PAN, MAN y WLAN con ejemplos actualizados, un video explicativo para una mejor comprensión visual y una presentación interactiva para profundizar en los conceptos clave.
+            </p>
+        </section>
+
+        <!-- Sección de Presentación -->
+        <section id="presentation" class="hidden-section card p-8">
+            <h2 class="text-4xl font-bold text-center mb-6">Tipos de Redes de Computadoras: Una Presentación</h2>
+            <div class="relative max-w-3xl mx-auto bg-white rounded-lg shadow-lg overflow-hidden p-6">
+                <!-- Diapositiva 1: Portada -->
+                <div class="presentation-slide active" id="slide1">
+                    <h3 class="text-3xl font-semibold mb-4">Tipos de Redes de Computadoras</h3>
+                    <p class="text-lg">Una exploración detallada de LAN, WAN, PAN, MAN y WLAN.</p>
+                    <img src="assets/imagenes/Imagen1.webp" alt="Imagen de portada de presentación de redes" class="mx-auto mt-6 rounded-lg shadow-md">
+                </div>
+
+                <!-- Diapositiva 2: Introducción -->
+                <div class="presentation-slide" id="slide2">
+                    <h3 class="text-3xl font-semibold mb-4">Introducción a las Redes</h3>
+                    <p class="text-lg mb-4">Las redes de computadoras son esenciales para la comunicación y el intercambio de recursos en la era digital. Permiten que dispositivos se conecten y compartan información.</p>
+                    <img src="assets/imagenes/imagen2.jpg" alt="Imagen de conectividad global" class="mx-auto mt-6 rounded-lg shadow-md">
+                </div>s
+
+                <!-- Diapositiva 3: LAN (Local Area Network) -->
+                <div class="presentation-slide" id="slide3">
+                    <h3 class="text-3xl font-semibold mb-4">LAN (Local Area Network)</h3>
+                    <p class="text-lg mb-4">Una LAN conecta dispositivos dentro de un área geográfica limitada, como una casa, oficina o campus universitario. Son ideales para compartir archivos e impresoras localmente.</p>
+                    <img src="assets/imagenes/imagen_lan.webp" alt="Imagen de red LAN" class="mx-auto mt-6 rounded-lg shadow-md">
+                </div>
+
+                <!-- Diapositiva 4: WAN (Wide Area Network) -->
+                <div class="presentation-slide" id="slide4">
+                    <h3 class="text-3xl font-semibold mb-4">WAN (Wide Area Network)</h3>
+                    <p class="text-lg mb-4">Las WAN cubren grandes áreas geográficas, conectando múltiples LANs a través de países o continentes. El ejemplo más grande de WAN es Internet.</p>
+                    <img src="assets/imagenes/imagen_wan.png" alt="Imagen de red WAN" class="mx-auto mt-6 rounded-lg shadow-md">
+                </div>
+
+                <!-- Diapositiva 5: PAN (Personal Area Network) -->
+                <div class="presentation-slide" id="slide5">
+                    <h3 class="text-3xl font-semibold mb-4">PAN (Personal Area Network)</h3>
+                    <p class="text-lg mb-4">Una PAN es una red de área personal, diseñada para conectar dispositivos cerca de una persona, como un teléfono, auriculares o un reloj inteligente. Su alcance es muy limitado.</p>
+                    <img src="assets/imagenes/imagen_pan.png" alt="Imagen de red PAN" class="mx-auto mt-6 rounded-lg shadow-md">
+                </div>
+
+                <!-- Diapositiva 6: MAN (Metropolitan Area Network) -->
+                <div class="presentation-slide" id="slide6">
+                    <h3 class="text-3xl font-semibold mb-4">MAN (Metropolitan Area Network)</h3>
+                    <p class="text-lg mb-4">Una MAN es más grande que una LAN pero más pequeña que una WAN, cubriendo un área metropolitana o una ciudad. A menudo es utilizada por municipios o grandes empresas.</p>
+                    <img src="assets/imagenes/imagen_man.png" alt="Imagen de red MAN" class="mx-auto mt-6 rounded-lg shadow-md">
+                </div>
+
+                <!-- Diapositiva 7: WLAN (Wireless Local Area Network) -->
+                <div class="presentation-slide" id="slide7">
+                    <h3 class="text-3xl font-semibold mb-4">WLAN (Wireless Local Area Network)</h3>
+                    <p class="text-lg mb-4">Una WLAN es una LAN que utiliza tecnología inalámbrica (como Wi-Fi) para conectar dispositivos, eliminando la necesidad de cables físicos para la conexión.</p>
+                    <img src="assets/imagenes/imagen_wlan.webp" alt="Imagen de red WLAN" class="mx-auto mt-6 rounded-lg shadow-md">
+                </div>
+
+                <!-- Diapositiva 8: Referencias -->
+                <div class="presentation-slide" id="slide8">
+                    <h3 class="text-3xl font-semibold mb-4">Referencias</h3>
+                    <ul class="list-disc list-inside text-left mx-auto max-w-xl">
+                        <li class="mb-2"><a href="https://www.cisco.com/c/es_mx/products/wireless/what-is-wireless-lan-wlan.html" target="_blank" class="text-blue-600 hover:underline">Cisco - ¿Qué es una WLAN? (2023)</a></li>
+                        <li class="mb-2"><a href="https://www.ibm.com/mx-es/topics/wan" target="_blank" class="text-blue-600 hover:underline">IBM - ¿Qué es una WAN? (2022)</a></li>
+                        <li class="mb-2"><a href="https://aws.amazon.com/es/what-is/lan/" target="_blank" class="text-blue-600 hover:underline">AWS - ¿Qué es una LAN? (2023)</a></li>
+                        <li class="mb-2"><a href="https://www.geeksforgeeks.org/types-of-computer-networks/" target="_blank" class="text-blue-600 hover:underline">GeeksforGeeks - Tipos de Redes de Computadoras (2024)</a></li>
+                    </ul>
+                </div>
+
+                <div class="flex justify-between mt-6">
+                    <button class="slide-button" onclick="prevSlide()"><i class="fas fa-chevron-left mr-2"></i>Anterior</button>
+                    <button class="slide-button" onclick="nextSlide()">Siguiente<i class="fas fa-chevron-right ml-2"></i></button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección de Video -->
+        <section id="video" class="hidden-section card p-8">
+            <h2 class="text-4xl font-bold text-center mb-6">Video Explicativo sobre Tipos de Redes</h2>
+            <div class="flex justify-center">
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/aPHHVwHpg9M?si=Y9oRVh6eO5Pq1F6R" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            </div>
+            <p class="text-center mt-4 text-gray-700">Este video proporciona una excelente visión general de los diferentes tipos de redes.</p>
+        </section>
+
+        <!-- Sección de Contenido -->
+        <section id="content" class="hidden-section card p-8">
+            <h2 class="text-4xl font-bold text-center mb-6">Profundizando en los Tipos de Redes</h2>
+            <div class="grid md:grid-cols-2 gap-8">
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <h3 class="text-2xl font-semibold mb-3">LAN (Red de Área Local)</h3>
+                    <img src="assets/imagenes/imagen_lan.webp" alt="Imagen de un esquema de red LAN" class="w-full h-auto rounded-lg mb-4 shadow-sm">
+                    <p class="mb-4">Las LANs son las redes más comunes en entornos domésticos y empresariales pequeños. Permiten a los dispositivos comunicarse a alta velocidad dentro de un edificio o campus limitado. Su principal ventaja es la velocidad y la seguridad relativa, ya que el tráfico no sale del entorno local.</p>
+                    <p class="mb-4">Un ejemplo práctico sería la red en una oficina donde las computadoras de los empleados están conectadas a una impresora compartida y un servidor local.</p>
+                    <a href="https://www.cloudflare.com/es-es/learning/network-layer/what-is-a-lan/" target="_blank" class="text-blue-600 hover:underline font-medium">Más información sobre LANs (Cloudflare)</a>
+                </div>
+
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <h3 class="text-2xl font-semibold mb-3">WAN (Red de Área Amplia)</h3>
+                    <img src="assets/imagenes/imagen_wan.png" alt="Imagen de WAN" class="w-full h-auto rounded-lg mb-4 shadow-sm">
+                    <p class="mb-4">Las WANs son fundamentales para la comunicación global. Conectan redes LANs a través de distancias geográficas extensas utilizando tecnologías como líneas dedicadas, VPNs o MPLS. Internet es el ejemplo más conocido y masivo de una WAN.</p>
+                    <p class="mb-4">Las corporaciones con múltiples sucursales en diferentes ciudades o países dependen de WANs para integrar sus operaciones y permitir la comunicación entre sus empleados.</p>
+                    <a href="https://www.redhat.com/es/topics/networking/what-is-wan" target="_blank" class="text-blue-600 hover:underline font-medium">Más información sobre WANs (Red Hat)</a>
+                </div>
+
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <h3 class="text-2xl font-semibold mb-3">PAN (Red de Área Personal)</h3>
+                    <img src="assets/imagenes/imagen_pan.png" alt="Imagen de PAN" class="w-full h-auto rounded-lg mb-4 shadow-sm">
+                    <p class="mb-4">Las PANs son redes a muy corta distancia, a menudo establecidas con Bluetooth o infrarrojos. Su propósito es conectar dispositivos personales como smartphones, auriculares inalámbricos, teclados y ratones a una computadora, o un smartwatch a un teléfono móvil.</p>
+                    <p class="mb-4">Son convenientes para la interacción directa y de bajo consumo de energía entre dispositivos cercanos, facilitando la sincronización de datos o el uso de periféricos inalámbricos.</p>
+                    <a href="https://www.geeksforgeeks.org/personal-area-network-pan/" target="_blank" class="text-blue-600 hover:underline font-medium">Más información sobre PANs (GeeksforGeeks, 2024)</a>
+                </div>
+
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <h3 class="text-2xl font-semibold mb-3">MAN (Red de Área Metropolitana)</h3>
+                    <img src="assets/imagenes/imagen_man.png" alt="Imagen de MAN" class="w-full h-auto rounded-lg mb-4 shadow-sm">
+                    <p class="mb-4">Las MANs son redes que interconectan usuarios con recursos informáticos en un área geográfica mayor que una LAN, como una ciudad o un campus grande. A menudo son propiedad de una sola entidad, como un gobierno municipal o una gran corporación.</p>
+                    <p class="mb-4">Un ejemplo sería una red que conecta diferentes edificios gubernamentales o universitarios dentro de la misma ciudad, permitiendo una comunicación eficiente y segura entre ellos.</p>
+                    <a href="https://www.tutorialspoint.com/computer_fundamentals/computer_networking_man.htm" target="_blank" class="text-blue-600 hover:underline font-medium">Más información sobre MANs (Tutorialspoint, 2023)</a>
+                </div>
+
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <h3 class="text-2xl font-semibold mb-3">WLAN (Red de Área Local Inalámbrica)</h3>
+                    <img src="assets/imagenes/imagen_wlan.webp" alt="Imagen de dispositivos conectados por Wi-Fi" class="w-full h-auto rounded-lg mb-4 shadow-sm">
+                    <p class="mb-4">Las WLANs son un subconjunto de las LANs que utilizan señales de radio para transmitir datos, eliminando la necesidad de cables. Esto proporciona flexibilidad y movilidad a los usuarios dentro del área de cobertura. Los puntos de acceso (Access Points) son dispositivos clave en una WLAN.</p>
+                    <p class="mb-4">El Wi-Fi en tu casa o en una cafetería es un ejemplo perfecto de WLAN, permitiendo la conexión de laptops, smartphones y tablets sin cables.</p>
+                    <a href="https://www.fortinet.com/lat/purposes/what-is-wlan" target="_blank" class="text-blue-600 hover:underline font-medium">Más información sobre WLANs (Fortinet, 2023)</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección de Contacto -->
+        <section id="contact" class="hidden-section card p-8 text-center">
+            <h2 class="text-4xl font-bold mb-6">Contacto</h2>
+            <p class="text-xl mb-4">Este sitio web fue creado por el Equipo #4.</p>
+            <div class="text-lg">
+                <p class="font-semibold mb-2">Integrantes del equipo:</p>
+                <ul class="list-disc list-inside mx-auto max-w-md">
+                    <li>Luis Luciano Matos Santos</li>
+                    <li><a href="luislucianoms@gmail.com">luislucianoms@gmail.com</a></li>
+        
+
+                </ul>
+                <p class="mt-4">¡Gracias por visitar nuestro blog!</p>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 Luis Luciano Matos Santos</p>
+        </div>
+    </footer>
+
+    <script>
+        let currentSlide = 1;
+        const totalSlides = 8; // Incluyendo portada y referencias
+
+        function showSlide(n) {
+            const slides = document.querySelectorAll('.presentation-slide');
+            slides.forEach(slide => slide.classList.remove('active'));
+            document.getElementById('slide' + n).classList.add('active');
+            currentSlide = n;
+        }
+
+        function nextSlide() {
+            if (currentSlide < totalSlides) {
+                showSlide(currentSlide + 1);
+            } else {
+                showSlide(1); // Volver al inicio si se llega al final
+            }
+        }
+
+        function prevSlide() {
+            if (currentSlide > 1) {
+                showSlide(currentSlide - 1);
+            } else {
+                showSlide(totalSlides); // Ir al final si se llega al principio
+            }
+        }
+
+        function showSection(sectionId) {
+            const sections = document.querySelectorAll('main section');
+            sections.forEach(section => section.classList.remove('active-section'));
+            document.getElementById(sectionId).classList.add('active-section');
+        }
+
+        // Inicializar la primera diapositiva y sección al cargar
+        document.addEventListener('DOMContentLoaded', () => {
+            showSlide(1);
+            showSection('home'); // Mostrar la sección de inicio por defecto
+        });
+    </script>
+</body>
+</html>
